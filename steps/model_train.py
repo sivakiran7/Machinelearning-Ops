@@ -5,5 +5,5 @@ from zenml import step
 
 
 @step
-def train_model(df: pd.DataFrame)->Node:
+def train_model(df: pd.DataFrame)->None:
     pass
