@@ -32,6 +32,11 @@ python -m venv env
 env\Scripts\activate
 
 ```
+install zenml and upgrade pip if required dont use latest version of zenml for not facing an queries
+```md
+pip install --upgrade pip
+pip install zenml
+```
 
 ![Screenshot 2025-07-02 214556](https://github.com/user-attachments/assets/3191eb30-01e7-4a0d-9513-c6e469b0c654)
 
