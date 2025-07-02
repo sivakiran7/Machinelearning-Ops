@@ -1,10 +1,10 @@
 import logging
 from abc import ABC, abstractmethod
-
+from typing import Union 
 
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split # type: ignore
+from sklearn.model_selection import train_test_split 
 
 
 class DataStrategy(ABC):
@@ -14,7 +14,7 @@ class DataStrategy(ABC):
     """
 
     @abstractmethod
-    def handle_data(self, data: pd.DataFrame) -> Union(pd.DataFrame, pd.Series): # type: ignore
+    def handle_data(self, data: pd.DataFrame) -> Union[pd.DataFrame, pd.Series]: # type: ignore
         pass
 
 
