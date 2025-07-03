@@ -24,7 +24,7 @@ zenml project set <project_name>
 
 ```
 
-## **`before making a project make sure to create an virtual environment for not getting an dependency errors`**
+## before making a project make sure to create an virtual environment for not getting an dependency errors
 
 ```md
 python -m venv env
