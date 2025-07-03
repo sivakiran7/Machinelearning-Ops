@@ -13,7 +13,7 @@ def train_model(
     X_test: pd.DataFrame,
     y_train: pd.DataFrame,
     y_test: pd.DataFrame,
-    config: ModelNameConfig,
+    config: ModelNameConfig= ModelNameConfig(model_name="linearregression", fine_tuning=False),
 
 ) -> RegressorMixin:
 
