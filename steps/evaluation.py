@@ -5,9 +5,15 @@ from typing import Tuple
 from typing_extensions import Annotated
 from zenml import step
 from src.evaluation import MSE, R2Score, RMSE
+from zenml.client import Client
+import mlflow
 
 
-@step
+
+experiment_tracker = Client().active_stack.experiment_tracker  # activates the tracker using client
+
+
+@step(experiment_tracker=experiment_tracker.name)  # initializes the experiment tracker and tracks the experiment components
 def evalute_model(model:RegressorMixin,
     X_test: pd.DataFrame,
     y_test: pd.DataFrame,
@@ -15,17 +21,20 @@ def evalute_model(model:RegressorMixin,
     ) -> Tuple[Annotated[float, "RMSE"], Annotated[float, "R2 Score"]]:
     
   try:    
-            predictions = model.predict(X_test)
-            mse_class=MSE()
-            mse= mse_class.calculate_score(y_test, predictions)
-            
-            r2_class=R2Score()
-            r2_score=r2_class.calculate_score(y_test, predictions)
-            
-            rmse_class=RMSE()
-            rmse=rmse_class.calculate_score(y_test, predictions)
-            
-            return rmse, r2_score
+      predictions = model.predict(X_test)
+      mse_class=MSE()
+      mse= mse_class.calculate_score(y_test, predictions)
+      mlflow.log_metric("mse", mse)  # Log MSE to MLflow
+      
+      r2_class=R2Score()
+      r2_score=r2_class.calculate_score(y_test, predictions)
+      mlflow.log_metric("r2_score", r2_score)  # Log R2 Score to MLflow
+    
+      rmse_class=RMSE()
+      rmse=rmse_class.calculate_score(y_test, predictions)
+      mlflow.log_metric("rmse", rmse)  # Log RMSE to MLflow
+      
+      return rmse, r2_score
   
   except Exception as e:
     logging.error(f"Error in evaluating model: {e}")
