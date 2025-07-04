@@ -5,7 +5,7 @@ from zenml import step
 from sklearn.base import RegressorMixin
 from src.model_development import LinearRegressionModel
 from .config import ModelNameConfig
-from zenml.client import Client
+from zenml.client import Client  # used to access the active stack and experiment tracker and assinging the tracker to the step
 
 import mlflow
 

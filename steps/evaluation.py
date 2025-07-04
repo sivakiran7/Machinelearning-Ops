@@ -24,15 +24,15 @@ def evalute_model(model:RegressorMixin,
       predictions = model.predict(X_test)
       mse_class=MSE()
       mse= mse_class.calculate_score(y_test, predictions)
-      mlflow.log_metric("mse", mse)  # Log MSE to MLflow
+      mlflow.log_metric("mse", mse)  # mean square error value
       
       r2_class=R2Score()
       r2_score=r2_class.calculate_score(y_test, predictions)
-      mlflow.log_metric("r2_score", r2_score)  # Log R2 Score to MLflow
+      mlflow.log_metric("r2_score", r2_score)  # return r2 score value
     
       rmse_class=RMSE()
       rmse=rmse_class.calculate_score(y_test, predictions)
-      mlflow.log_metric("rmse", rmse)  # Log RMSE to MLflow
+      mlflow.log_metric("rmse", rmse)  # rmse return value
       
       return rmse, r2_score
   

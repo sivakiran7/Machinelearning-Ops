@@ -14,7 +14,7 @@ class IngestData:
         logging.info(f"ingesting data from{self.data_path}")
         return pd.read_csv(self.data_path)
 
-
+# This code defines a step in a ZenML pipeline that ingests data from a specified path and returns it as a pandas DataFrame. It uses the `IngestData` class to handle the data ingestion process, which reads a CSV file from the provided path.
 @step
 def ingest_df(data_path: str) -> pd.DataFrame:
     """

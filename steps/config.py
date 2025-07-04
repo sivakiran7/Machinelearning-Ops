@@ -1,3 +1,4 @@
+# config the machine learning model name and fine tuning
 
 from pydantic import BaseModel
 class ModelNameConfig(BaseModel):
