@@ -142,9 +142,9 @@ zenml stack describe
      │ (Plugins/Backends)    │◄──────────────────►│ (Cloud Services, Tools) │
      └──────────────────────┘                     └────────────────────────┘
 
+![Screenshot 2025-07-04 160231](https://github.com/user-attachments/assets/9da40ad3-2cc6-42db-bb3e-ab59b14e47f2)
 
-
-
+![Screenshot 2025-07-04 160256](https://github.com/user-attachments/assets/96a0ea5e-cc0c-41ab-8bc8-5c29448ae8b9)
 
 
 
