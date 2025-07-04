@@ -15,6 +15,7 @@ class Model(ABC):
         pass
 
 
+# making a linear regression model using a data frame
 class LinearRegressionModel(Model):
 
     def train(self, X_train, y_train, **kwargs):

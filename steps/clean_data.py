@@ -6,6 +6,7 @@ from typing_extensions import Annotated
 from typing import Tuple
 
 
+# cleaning the data amd dividing 
 @step
 def clean_df(df: pd.DataFrame) -> Tuple[
     Annotated[pd.DataFrame, "X_train"],
@@ -25,6 +26,7 @@ def clean_df(df: pd.DataFrame) -> Tuple[
         y_train : training labels
         y_test : testing labels
     """
+    #dividing the data strategy into two strategies
     try:
         process_strategy = DataPreProcessStrategy()
         data_cleaning = DataCleaning(df, process_strategy)

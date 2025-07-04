@@ -7,6 +7,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split 
 
 
+#creating a abstract class for data strategy
 class DataStrategy(ABC):
 
     """
