@@ -1,5 +1,5 @@
-# MLOps - zenml , mlflow
-
+# MLOps : zenml , MLFlow ⚛
+ 
 Aim of the project is to build and deploy an machine learning model from scratch using ZENML and MLFLOW 
 
 for zenml use an updated version not facing an queries
