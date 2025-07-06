@@ -146,6 +146,6 @@ zenml stack describe
 
 ![Screenshot 2025-07-04 160256](https://github.com/user-attachments/assets/96a0ea5e-cc0c-41ab-8bc8-5c29448ae8b9)
 
-
+⚛️👾</>😊
 
 
